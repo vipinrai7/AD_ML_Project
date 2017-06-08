@@ -1,0 +1,19 @@
+#predict{
+ background-color:#263248;
+ color:#ffffff;
+}
+#metrics{
+    background-color:#7e8aa2;
+    color:#ffffff;
+}
+#models{
+    background-color:#193441;
+    color:#ffffff;
+}
+.row{
+    display:flex;
+    justify-content:center;
+}
+body{
+background-color:#ECF0F1;
+}
