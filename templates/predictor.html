@@ -1,0 +1,15 @@
+{% extends "frame.html" %}
+{% block content %}
+    <div class="container">
+      <form action="/uploads" method='post' enctype='multipart/form-data'>
+        <div class="form-group">
+          <input type="number" class="form-control"  placeholder="Enter Age" name="age" min="19" max="90">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputFile">File input</label>
+          <input type="file" id="exampleInputFile" name="file">
+          <p class="help-block">Example block-level help text here.</p>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+{% endblock %}

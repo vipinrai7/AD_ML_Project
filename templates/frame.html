@@ -1,0 +1,34 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Alzhiemer's Predictor {% endblock %}
+{% block styles %}
+	{{super()}}
+	<link rel="stylesheet" href="{{url_for('.static',filename='custom.css')}}">
+{% endblock %}
+
+{% block navbar %}
+<div class="container">
+	<div class="jumbotron" style = "border:0.5px solid white; color:white; background-color:#449D44">
+		<h1>Alzhiemers Classifier</h1>
+	</div>
+	<div class="navbar" role = "navigation" style = "border:0.5px solid black;">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle"
+			data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle Navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class='navbar-brand' href='/'>Alzhiemer's Predictor</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li><a href='/'>Home.</a></li>
+				<li><a href='/predictor'>Predictions</a></li>
+                <li><a href='/metrics'>Metrics</a></li>
+				<li><a href='/models'>Models.</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+{% endblock %}

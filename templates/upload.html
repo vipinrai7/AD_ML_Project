@@ -1,0 +1,53 @@
+{% extends "frame.html" %}
+{% block head%}
+	{{super()}}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+{%endblock%}
+{% block content %}
+    <div class="container">
+
+
+        <div class="row justify-content-md-center" style="display:flex;justify-content: center;">
+            <img src="{{data['src']}}" height="300px" width="300px"/>
+			<div class="col-3" style="margin:10px;padding : 10px;border: 1px solid black;">
+	    		<canvas id="senti"></canvas>
+	    	</div>
+
+        </div>
+        <h2>Age:{{data['age']}}</h2><hr>
+        <h2>Risk: {{data['risk']}} <br> Classify : <br> Normal= {{data['norm']}}% <br> Alzhiemers' :{{data['alz']}}% </h2>
+
+        <script type="text/javascript">
+		    Chart.defaults.global.responsive = false;
+		    Chart.defaults.global.animation = true;
+            var ctx = document.getElementById('senti').getContext('2d');
+            var data = {
+						labels: [
+    						"Normal",
+    						" Alzhiemer's",
+						],
+						datasets: [
+    						{
+       						data: [Number({{data['norm']}}),Number({{data['alz']}})],
+       						backgroundColor: ["#FF6384","#FFFF00"],
+        						hoverBackgroundColor: ["#FF6384","#FFFF00"]
+    						}]
+					};
+					var options1 = {
+						title:{
+							display:true,
+							text:"Classifying Probability"
+						},
+							animation:{
+								easing: 'easeInOutQuart',
+								duration: 2500
+							}
+					};
+						    var myDoughnutChart = new Chart(ctx, {
+											type: 'doughnut',
+											data: data,
+											options: options1
+								});
+        </script>
+    </div>
+{% endblock %}

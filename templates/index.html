@@ -1,0 +1,23 @@
+{% extends "frame.html"%}
+{%block content%}
+
+    <div class="container">
+        <div class="row justify-content-md-center" style="display:flex;justify-content: center;">
+            <div class="col-3" id="predict" style="align: center;margin:10px;padding:10px;">
+                <img src="static/brain.gif" width="100%" height="300px"/>
+                <h5> Show Prediction</h5>
+                <button class='btn btn-large btn-success' onclick="location.href='/predictor'" type='button'>Run Classification</button>
+            </div>
+            <div class="col-3" id="metrics" style="align: center; margin:10px;padding:10px;">
+                <img src="static/metrics.gif" width="100%" height="300px"/>
+                <h5> Collection of Metrics related to Training and Validation.</h5>
+                <button class='btn btn-large btn-success' onclick="location.href='/metrics'" type='button'>Show Metrics</button>
+            </div>
+            <div class="col-3" id="models" style="align: center;margin:10px;padding:10px;">
+                <img src="static/nnet.jpeg" width="100%" height="300px"/>
+                <h5> Show visual model of Neural network used</h5>
+                <button class='btn btn-large btn-success' onclick="location.href='/model'" type='button'>Show Model.</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
